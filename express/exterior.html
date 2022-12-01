@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="eng">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Take Your Pic!</title>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css' />
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <h2>Q: Find the person in the scene and take a picture.</h2>
+
+    <style type="text/css">
+        #demo_table {
+            border: 0;
+        }
+
+        #demo_table img {
+            width: 128px;
+            height: 128px;
+        }
+
+        #demo_table td img {
+            border: 1px solid grey;
+            text-decoration: none;
+        }
+
+        #screenshotPreviews>img {
+            width: 250px;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+
+        [name^='question'] {
+            display: none;
+
+        }
+
+        .star {
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .empty i {
+            color: #ccc;
+        }
+
+        .green i {
+            color: lightgreen;
+        }
+
+        #inputs {
+            width: 100%;
+            height: 500px;
+            max-width: 500px;
+            margin: 0 auto 100px;
+            box-sizing: border-box;
+            padding: 50px;
+            text-align: center;
+            /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); */
+
+        }
+    </style>
+
+<body>
+
+    <div style="text-align: center;">
+        <form class="pure-form">
+            <!-- <input id="name" /> -->
+            <input id="clickMe" type="submit" value="Next"
+                style="height:25px;width:100px;background-color:maroon;color: #dddddd;" />
+        </form>
+
+    </div>
+
+    <div style="float:right;position: relative;">
+        <form id="inputs">
+            <h2>Thank you for taking up the Survey!</h2>
+            <h3>How correct was the caption for the scene?</h3>
+            <label class="star green"><input type="radio" name="question1" value="1"><i class="fa fa-star"></i></label>
+            <label class="star green"><input type="radio" name="question1" value="2"><i class="fa fa-star"></i></label>
+            <label class="star green"><input type="radio" name="question1" value="3" checked><i
+                    class="fa fa-star"></i></label>
+            <label class="star empty"><input type="radio" name="question1" value="4"><i class="fa fa-star"></i></label>
+            <label class="star empty"><input type="radio" name="question1" value="5"><i class="fa fa-star"></i></label>
+            <h3>How natural was the language of the caption?</h3>
+            <label class="star green"><input type="radio" name="question2" value="1"><i class="fa fa-star"></i></label>
+            <label class="star green"><input type="radio" name="question2" value="2"><i class="fa fa-star"></i></label>
+            <label class="star green"><input type="radio" name="question2" value="3" checked><i
+                    class="fa fa-star"></i></label>
+            <label class="star empty"><input type="radio" name="question2" value="4"><i class="fa fa-star"></i></label>
+            <label class="star empty"><input type="radio" name="question2" value="5"><i class="fa fa-star"></i></label>
+            <h3>How satisfying was the narration of the scene?</h3>
+            <label class="star green"><input type="radio" name="question3" value="1"><i class="fa fa-star"></i></label>
+            <label class="star green"><input type="radio" name="question3" value="2"><i class="fa fa-star"></i></label>
+            <label class="star green"><input type="radio" name="question3" value="3" checked><i
+                    class="fa fa-star"></i></label>
+            <label class="star empty"><input type="radio" name="question3" value="4"><i class="fa fa-star"></i></label>
+            <label class="star empty"><input type="radio" name="question3" value="5"><i
+                    class="fa fa-star"></i></label><br><br>
+            <input type="submit" value="Submit" id="content">
+        </form>
+    </div>
+</body>
+
+
+<script type="text/javascript" charset="utf-8">
+    var currentSpecies = "Exterior_Scene.x3d";
+
+    $(document).ready(function () {
+        var screenshotCount = 0;
+
+        //Every time the user clicks on the 'take screenhot' button
+        $("#btnTakeScreenshot").on("click", function () {
+            //Get data url from the runtime
+            var imgUrl = document.getElementById("canvas").runtime.getScreenshot();
+
+            //Create preview image...
+            var newScreenshotImage = document.createElement('img');
+            newScreenshotImage.src = imgUrl;
+            newScreenshotImage.id = "screenshot_" + screenshotCount;
+            $('#screenshotPreviews').append(newScreenshotImage);
+
+            screenshotCount++;
+            $('#screenshotCount').html(screenshotCount);
+
+            var screeshot_vars = getUrlVars();
+
+            // var operation = document.getElementById('operation_radio').value;
+            console.log(screeshot_vars)
+            var formData = new FormData();
+
+            formData.append('file_base64', imgUrl);
+            formData.append('userid', screeshot_vars['user_id']);
+            formData.append('algo', screeshot_vars['algo']);
+
+            $.ajax({
+                url: 'https://198.82.152.193:5001/upload',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    console.log(data)
+                    speak(data)
+                    // console.log(data['Object'])
+                    // alert('success')
+
+                }
+            })
+
+        });
+    });
+
+
+
+
+    $(document).ready(function () {
+
+        document.querySelector('form.pure-form').addEventListener('submit', function (e) {
+
+            //prevent the normal submission of the form
+            e.preventDefault();
+
+            var survey_vars = getUrlVars();
+
+            console.log(survey_vars)
+
+            var survey_formData = new FormData();
+            survey_formData.append('page', survey_vars['page_number'])
+            survey_formData.append('userid', survey_vars['user_id'])
+
+
+            $.ajax({
+                url: "https://198.82.152.193:5001/userid",
+                type: 'POST',
+                data: survey_formData,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    console.log(data)
+                    window.location.href = data
+
+
+
+                }
+            })
+
+        });
+
+    });
+
+
+    const speak = (msg) => {
+        const sp = new SpeechSynthesisUtterance(msg);
+        [sp.voice] = speechSynthesis.getVoices();
+        speechSynthesis.speak(sp);
+    }
+    function changeModel(val) {
+        //console.log (val);
+        currentSpecies = val;
+        var Iline = document.getElementById("inlineBox").setAttribute("url", val);
+
+    }
+
+    function getUrlVars() {
+
+        var url = window.location.href
+        var vars = {};
+        var hashes = url.split("?")[1];
+        var hash = hashes.split('&');
+
+        for (var i = 0; i < hash.length; i++) {
+            params = hash[i].split("=");
+            vars[params[0]] = params[1];
+        }
+        return vars;
+    }
+
+</script>
+
+<script>
+
+    // this handles the rating system 
+
+    var submit_survey = {}
+
+
+    var inputsForm = document.querySelector("#inputs");
+    inputsForm.onchange = function (e) {
+        if (e.target.type = "radio") {
+            var stars = document.querySelectorAll(`[name='${e.target.name}']`);
+            for (var i = 0; i < stars.length; i++) {
+                if (i < e.target.value) {
+                    stars[i].parentElement.classList.replace("empty", "green");
+                } else {
+                    stars[i].parentElement.classList.replace("green", "empty");
+                }
+            }
+        }
+    }
+    inputsForm.onsubmit = function () {
+
+        submit_survey["Q1"] = this.question1.value;
+        submit_survey["Q2"] = this.question2.value;
+        submit_survey["Q3"] = this.question3.value;
+
+
+        var rating_survey = getUrlVars()
+
+        var rating_formData = new FormData();
+
+        rating_formData.append('userid', rating_survey['user_id'])
+        rating_formData.append('algo', rating_survey['algo'])
+        rating_formData.append('world', rating_survey['world_id'])
+        rating_formData.append('task', rating_survey['task_type'])
+        rating_formData.append('page', rating_survey['page_number'])
+
+        rating_formData.append('q1', submit_survey["Q1"])
+        rating_formData.append('q2', submit_survey["Q2"])
+        rating_formData.append('q3', submit_survey["Q3"])
+
+
+
+        console.log(rating_formData)
+        for (var pair of rating_formData.entries()) {
+            console.log(pair[0] + ', ' + pair[1]);
+        }
+        console.log(`How correct was the caption for the scene? => ${this.question1.value}\nHow natural was the language of the caption? => ${this.question2.value} \nHow satisfying was the narration of the scene? => ${this.question3.value}`);
+
+
+        $.ajax({
+            url: "https://198.82.152.193:5001/saverating",
+            type: 'POST',
+            data: rating_formData,
+            processData: false,
+            contentType: false,
+            success: function (data) {
+                console.log(data)
+
+            }
+        })
+
+        return false;
+    }
+
+
+
+
+</script>
+
+
+</head>
+
+<div>
+    <center>
+        <h2> <a href="#" id="btnTakeScreenshot">Take screenshot</a> </h2>
+    </center>
+
+
+    <!-- <label for="operation_radio">Choose an algorithm:</label>
+    <select name="operation_radio" id="operation_radio">
+        <option value="1">Count</option>
+        <option value="2">Prominence</option>
+        <option value="3">LeftToRight</option>
+        <option value="4">BottomToTp</option>
+    </select> -->
+</div>
+
+
+<div
+    style="position:absolute;right:160px;top:600px;border:1px solid #dddddd; width:300px;min-height:200px;padding:10px;">
+    <b>Screenshots: <span id="screenshotCount">0</span></b>
+    <div id="screenshotPreviews">
+
+    </div>
+</div>
+<x3d id="canvas" width='800px' height='600px' debug='true'>
+    <scene id="mainScene">
+
+        <Viewpoint position="20.74235 -2.45979 53.78579" orientation="0.00003 -1.00000 0.00000 0.16261"
+            centerOfRotation="29.15486 -2.87569 41.69006" fieldOfView="0.78500" description="CA_cam_main_Interance">
+        </Viewpoint>
+
+        <transform>
+            <inline nameSpaceName="Russo" mapDEFToID="true" url="Exterior_Scene.x3d"> </inline>
+
+        </transform>
+    </scene>
+</x3d>
+
+</html>

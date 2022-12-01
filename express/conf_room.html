@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="eng">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Take Your Pic!</title>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+    <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css' />
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'> </script>
+    <style type="text/css">
+        #demo_table {
+            border: 0;
+        }
+
+        #demo_table img {
+            width: 128px;
+            height: 128px;
+        }
+
+        #demo_table td img {
+            border: 1px solid grey;
+            text-decoration: none;
+        }
+
+        #screenshotPreviews>img {
+            width: 250px;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+    </style>
+
+    <script type="text/javascript" charset="utf-8">
+        var currentSpecies = "ConfRoom_Scene.x3d";
+
+        $(document).ready(function () {
+            var screenshotCount = 0;
+
+            //Every time the user clicks on the 'take screenhot' button
+            $("#btnTakeScreenshot").on("click", function () {
+                //Get data url from the runtime
+                var imgUrl = document.getElementById("canvas").runtime.getScreenshot();
+
+                //Create preview image...
+                var newScreenshotImage = document.createElement('img');
+                newScreenshotImage.src = imgUrl;
+                newScreenshotImage.id = "screenshot_" + screenshotCount;
+                $('#screenshotPreviews').append(newScreenshotImage);
+
+                screenshotCount++;
+                $('#screenshotCount').html(screenshotCount);
+
+                alert('posting to API');
+
+                var operation = document.getElementById('operation_radio').value;
+
+                var formData = new FormData();
+
+                formData.append('file_base64', imgUrl);
+                formData.append('operation', operation);
+
+                $.ajax({
+                    url: 'https://198.82.152.193:5001/upload',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (data) {
+                        console.log(data)
+                        speak(data)
+                        // console.log(data['Object'])
+                        // alert('success')
+
+                    }
+                })
+
+            });
+        });
+
+
+        const speak = (msg) => {
+            const sp = new SpeechSynthesisUtterance(msg);
+            [sp.voice] = speechSynthesis.getVoices();
+            speechSynthesis.speak(sp);
+        }
+        function changeModel(val) {
+            //console.log (val);
+            currentSpecies = val;
+            var Iline = document.getElementById("inlineBox").setAttribute("url", val);
+
+        }
+
+    </script>
+
+
+</head>
+
+<div>
+    <center>
+        <h2> <a href="#" id="btnTakeScreenshot">Take screenshot</a> </h2>
+    </center>
+
+    <label for="operation_radio">Choose an algorithm:</label>
+    <select name="operation_radio" id="operation_radio">
+        <option value="1">Count</option>
+        <option value="2">Prominence</option>
+        <option value="3">LeftToRight</option>
+        <option value="4">BottomToTp</option>
+    </select>
+</div>
+
+<div
+    style="position:absolute;right:160px;top:600px;border:1px solid #dddddd; width:300px;min-height:200px;padding:10px;">
+    <b>Screenshots: <span id="screenshotCount">0</span></b>
+    <div id="screenshotPreviews">
+
+    </div>
+</div>
+<x3d id="canvas" width='800px' height='600px' debug='true'>
+    <scene id="mainScene">
+
+        <!-- <Viewpoint position="-0.13670 2.26373 12.89185" orientation="-0.47202 -0.88146 -0.01530 0.07349" 
+	 centerOfRotation="0.33655 2.84860 5.59735" fieldOfView="0.85800" description=""></Viewpoint> -->
+
+        <transform>
+            <inline nameSpaceName="Russo" mapDEFToID="true" url="ConfRoom_Scene.x3d"> </inline>
+
+        </transform>
+    </scene>
+</x3d>
+
+</html>

@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D profile='Immersive' >
+<head>
+ <meta name='Vizthumbnail' content='Thumb_Untitled2_x3d21412321518039155.jpg'/>
+ <meta name='filename' content='n1Main.x3d'/>
+ <meta name='generator' content='Blender 2.78 (sub 0)'/>
+ <meta name='filename' content='a2Outb.x3d'/>
+ <meta name='filename' content='a3Lobby1.x3d'/>
+ <meta name='filename' content='a4Lobby2.x3d'/>
+ <meta name='filename' content='a5Kiosk-TheFBXSC.x3d'/>
+ <meta name='filename' content='a6Pool-Performance.x3d'/>
+ <meta name='filename' content='a7PerformanceFBXASC.x3d'/>
+ <meta name='filename' content='a8Master-Create-Lab-News-Upper.x3d'/>
+ <meta name='filename' content='a9Upper-SandChair1.x3d'/>
+ <meta name='filename' content='a11SandTable-Couch-Desk12.x3d'/>
+ <meta name='filename' content='a10SandChair2.x3d'/>
+ <meta name='filename' content='a12SandDesk3.x3d'/>
+ <meta name='filename' content='a13SandCorner-White-Doors.x3d'/>
+ <meta name='filename' content='a14SandDoors-Lights.x3d'/>
+ <meta name='filename' content='a15SandboxRoom-Hallway.x3d'/>
+ <meta name='filename' content='a16LearnObservTable-RoomAcces.x3d'/>
+ <meta name='filename' content='a18LearnObserv-Chairs1.x3d'/>
+ <meta name='filename' content='a19LearnObserv-Chairs2.x3d'/>
+ <meta name='filename' content='a20LearnObserv-Monitors.x3d'/>
+ <meta name='filename' content='a21LearnPref.x3d'/>
+ <meta name='filename' content='a22LearningLab1.x3d'/>
+ <meta name='filename' content='a23LearningLab2-Tables1.x3d'/>
+ <meta name='filename' content='a24LearningLab2-Tables2-Stools.x3d'/>
+ <meta name='filename' content='a25LearningLab2-Tables2-Chairs1.x3d'/>
+ <meta name='filename' content='a26LearningLab2-Tables2-Chairs2.x3d'/>
+ <meta name='filename' content='a27LearningLab2-ProjectsDoorsWhite-Tablets.x3d'/>
+ <meta name='filename' content='a28StillNOrgan-Unassign-Signs-Doors1.x3d'/>
+ <meta name='filename' content='a29StillNOrgan-UnassignDoors2.x3d'/>
+ <meta name='filename' content='cameras.x3d'/>
+ <meta name='filename' content='avatar.x3d'/>
+ <meta name='ExportTime' content='16:32:35'/>
+ <meta name='ExportDate' content='2/7/2018'/>
+ <meta name='VivatyStudioVersion' content='738'/>
+ <meta name='VivatyStudioSource' content='untitled2.fxw'/>
+</head>
+<Scene>
+<WorldInfo
+ title='a0MossArtComposed2'
+ info='"This Web3D Content was created with Vivaty Studio, a Web3D authoring tool"
+ "www.mediamachines.com"'/>
+<Background DEF='WO_World'
+ skyAngle=''
+ skyColor='
+  .2549 .38431 .41176'
+ groundAngle=''
+ groundColor='
+  .05098 .05098 .05098'/>
+<NavigationInfo
+ avatarSize='
+  .25 1.75 .75'
+ visibilityLimit='0'
+ speed='1'
+ headlight='true'
+type='"WALK", "ANY"'/>
+<Transform DEF='dad_Light1'
+ translation='-15 0 34'>
+ <PointLight DEF='Light1'
+  containerField='children'
+  ambientIntensity='0'
+  intensity='.5'
+  radius='100'
+  attenuation='1 0 0'
+  color='1 1 1'
+  on='true'/>
+</Transform>
+
+<DirectionalLight></DirectionalLight>
+
+<Transform DEF='cam_performanceStudio_insideStudio_TRANSFORM'
+ translation='.98442 1.22702 -2.23428'
+ scale='1.0 1.0 1.0'>
+ <Viewpoint DEF='CA_cam_performanceStudio_insideStudio'
+  containerField='children'
+  description='CA_cam_performanceStudio_insideStudio'
+  jump='true'
+  fieldOfView='.95'
+  position='0 0 0'
+  orientation='0 1 0 3.142'/>
+</Transform>
+
+<Transform DEF='cam_main_Interance_TRANSFORM'
+ translation='14.9311 -2.6722 57.5121'
+ scale='1.0 1.0 1.0'>
+ <Viewpoint DEF='CA_cam_main_Interance'
+  containerField='children'
+  description='CA_cam_main_Interance'
+  jump='true'
+  fieldOfView='.785'
+  position='0 0 0'
+  orientation='1 0 0 0'/>
+</Transform>
+<Transform DEF='cam_centeralStairs_inside_TRANSFORM'
+ translation='12.5763 -2.28119 35.13632'
+ scale='1.0 1.0 1.0'>
+ <Viewpoint DEF='CA_cam_centeralStairs_inside'
+  containerField='children'
+  description='CA_cam_centeralStairs_inside'
+  jump='true'
+  fieldOfView='.785'
+  position='0 0 0'
+  orientation='1 0 0 0'/>
+</Transform>
+<Transform DEF='cam_sandBox_hallWay_TRANSFORM'
+ translation='-7.60653 -2.41687 25.22134'
+ rotation='-0 1 0 1.571'
+ scale='1.0 1.0 1.0'>
+ <Viewpoint DEF='CA_cam_sandBox_hallWay'
+  containerField='children'
+  description='CA_cam_sandBox_hallWay'
+  jump='true'
+  fieldOfView='.95'
+  position='0 0 0'
+  orientation='0 1 0 3.142'/>
+</Transform>
+<Transform DEF='cam_cube_Interance_TRANSFORM'
+ translation='1.00297 -2.78357 65.96297'
+ scale='1.0 1.0 1.0'>
+ <Viewpoint DEF='CA_cam_cube_Interance'
+  containerField='children'
+  description='CA_cam_cube_Interance'
+  jump='true'
+  fieldOfView='.785'
+  position='0 0 0'
+  orientation='1 0 0 0'/>
+</Transform>
+<Transform DEF='cam_PerformanceHall_interance_TRANSFORM'
+ translation='31.50074 -2.54506 40.70615'
+ rotation='-0 1 0 1.571'
+ scale='1.0 1.0 1.0'>
+ <Viewpoint DEF='CA_cam_PerformanceHall_interance'
+  containerField='children'
+  description='CA_cam_PerformanceHall_interance'
+  jump='true'
+  fieldOfView='.785'
+  position='0 0 0'
+  orientation='0 1 0 3.142'/>
+</Transform>
+<Transform DEF='cam_PerformanceHallStairs_inside_TRANSFORM'
+ translation='45.35132 -2.40208 46.81895'
+ scale='1.0 1.0 1.0'>
+ <Viewpoint DEF='CA_cam_PerformanceHallStairs_inside'
+  containerField='children'
+  description='CA_cam_PerformanceHallStairs_inside'
+  jump='true'
+  fieldOfView='.785'
+  position='0 0 0'
+  orientation='0 1 0 3.142'/>
+</Transform>
+<Transform DEF='cam_observationRoom_hallway_TRANSFORM'
+ translation='.98751 1.21741 -2.15636'
+ scale='1.0 1.0 1.0'>
+ <Viewpoint DEF='CA_cam_observationRoom_hallway'
+  containerField='children'
+  description='CA_cam_observationRoom_hallway'
+  jump='true'
+  fieldOfView='1.24'
+  position='0 0 0'
+  orientation='0 1 0 3.142'/>
+</Transform>
+<Transform DEF='cam_observationRoom_insideRoom_TRANSFORM'
+ translation='3.17857 1.61072 2.00472'
+ scale='1.0 1.0 1.0'>
+ <Viewpoint DEF='CA_cam_observationRoom_insideRoom'
+  containerField='children'
+  description='CA_cam_observationRoom_insideRoom'
+  jump='true'
+  fieldOfView='1.24'
+  position='0 0 0'
+  orientation='0 1 0 3.142'/>
+</Transform>
+<Transform DEF='cam_learningLab_hallWay_TRANSFORM'
+ translation='-1.94365 1.11897 -2.20677'
+ rotation='0 1 0 3.142'
+ scale='1.0 1.0 1.0'>
+ <Viewpoint DEF='CA_cam_learningLab_hallWay'
+  containerField='children'
+  description='CA_cam_learningLab_hallWay'
+  jump='true'
+  fieldOfView='.95'
+  position='0 0 0'
+  orientation='1 0 0 0'/>
+</Transform>
+<Transform DEF='cam_learningLab_insideLab_TRANSFORM'
+ translation='-9.55437 .81944 1.60337'
+ scale='1.0 1.0 1.0'>
+ <Viewpoint DEF='CA_cam_learningLab_insideLab'
+  containerField='children'
+  description='CA_cam_learningLab_insideLab'
+  jump='true'
+  fieldOfView='.95'
+  position='0 0 0'
+  orientation='0 1 0 3.142'/>
+</Transform>
+
+<Transform DEF='cam_sandBox_insideSandBox_TRANSFORM'
+ translation='.66679 -1.96256 13.47507'
+ scale='1.0 1.0 1.0'>
+ <Viewpoint DEF='CA_cam_sandBox_insideSandBox'
+  containerField='children'
+  description='CA_cam_sandBox_insideSandBox'
+  jump='true'
+  fieldOfView='.95'
+  position='0 0 0'
+  orientation='0 1 0 3.142'/>
+</Transform>
+<Transform DEF='cam_backInterance_TRANSFORM'
+ translation='6.26939 1.0785 -25.36759'
+ scale='1.0 1.0 1.0'>
+ <Viewpoint DEF='CA_cam_backInterance'
+  containerField='children'
+  description='CA_cam_backInterance'
+  jump='true'
+  fieldOfView='.95'
+  position='0 0 0'
+  orientation='0 1 0 3.142'/>
+</Transform>
+<!-- 
+<Inline DEF='Inline2'
+ url='"a2Outb.x3d"'/>
+<Inline DEF='Inline3'
+ url='"a3Lobby1.x3d"'/>
+<Inline DEF='Inline4'
+ url='"a4Lobby2.x3d"'/>
+<Inline DEF='Inline5'
+ url='"a5Kiosk-TheFBXSC.x3d"'/>
+ <Inline DEF='Inline1'
+ url='"a1Main.x3d"'/>  
+
+<Inline DEF='Inline6'
+ url='"a6Pool-Performance.x3d"'/>
+  -->
+
+
+
+<Inline DEF='Inline7'
+ url='"a7PerformanceFBXASC.x3d"'/>
+
+  <!--
+<Inline DEF='Inline8'
+ url='"a8Master-Create-Lab-News-Upper.x3d"'/>
+
+
+<Inline DEF='Inline9'
+ url='"a9Upper-SandChair1.x3d"'/>
+<Inline DEF='Inline10'
+ url='"a10SandChair2.x3d"'/>
+<Inline DEF='Inline11'
+ url='"a11SandTable-Couch-Desk12.x3d"'/>
+<Inline DEF='Inline12'
+ url='"a12SandDesk3.x3d"'/>
+<Inline DEF='Inline13'
+ url='"a13SandCorner-White-Doors.x3d"'/>
+<Inline DEF='Inline14'
+ url='"a14SandDoors-Lights.x3d"'/>
+<Inline DEF='Inline15'
+ url='"a15SandboxRoom-Hallway.x3d"'/>   
+
+
+
+
+<Inline DEF='Inline16'
+ url='"a16LearnObservTable-RoomAcces.x3d"'/>
+<Inline DEF='Inline17'
+ url='"a17LearnObservMonit-WhiteBoar-Door.x3d"'/>
+<Inline DEF='Inline18'
+ url='"a18LearnObserv-Chairs1.x3d"'/>
+<Inline DEF='Inline19'
+ url='"a19LearnObserv-Chairs2.x3d"'/>
+<Inline DEF='Inline20'
+ url='"a20LearnObserv-Monitors.x3d"'/>
+
+<Inline DEF='Inline21'
+ url='"a21LearnPref.x3d"'/>
+
+<Inline DEF='Inline22'
+ url='"a22LearningLab1.x3d"'/>
+<Inline DEF='Inline23'
+ url='"a23LearningLab2-Tables1.x3d"'/>
+<Inline DEF='Inline24'
+ url='"a24LearningLab2-Tables2-Stools.x3d"'/>
+<Inline DEF='Inline25'
+ url='"a25LearningLab2-Tables2-Chairs1.x3d"'/>
+<Inline DEF='Inline26'
+ url='"a26LearningLab2-Tables2-Chairs2.x3d"'/>
+<Inline DEF='Inline27'
+ url='"a27LearningLab2-ProjectsDoorsWhite-Tablets.x3d"'/>
+<Inline DEF='Inline28'
+ url='"a28StillNOrgan-Unassign-Signs-Doors1.x3d"'/>
+<Inline DEF='Inline29'
+ url='"a29StillNOrgan-UnassignDoors2.x3d"'/>
+<Inline DEF='Inline30'
+ url='"a30LearningLabHallSigns-FromRevised2maya.x3d"'/> -->
+
+<Transform translation='-12 -3.6 29' rotation='0 1 0 -1.8'>
+<Transform scale='.01 .01 .01' >
+<Inline DEF='Inline31'
+ url='"avatars/Regina_aopted.x3d"'/>
+  </Transform> 
+ </Transform>
+
+
+
+</Scene>
+</X3D>
