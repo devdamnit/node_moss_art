@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const fs = require("fs");
 var bodyParser = require("body-parser");
+const { count } = require("console");
 
 /**
  * Connection URI. Update <username>, <password>, and <your-cluster-url> to reflect your cluster.
@@ -34,7 +35,6 @@ const app = express();
 app.use(express.json());
 app.use(express.static("express"));
 
-// app.use(express.urlencoded({ extended: true }));
 // configure the app to use bodyParser()
 app.use(
   bodyParser.urlencoded({
@@ -50,7 +50,7 @@ app.use(
 
 // Tested OK
 app.post("/uploadMediaFile", function (req, res) {
-  console.log("/uploadMediaFile");
+  console.log("/uploadMediaFile POST");
   try {
     if (!req.files) {
       res.status(500).send({
@@ -82,7 +82,7 @@ app.post("/uploadMediaFile", function (req, res) {
 
 // Tested OK
 app.post("/uploadMediaData", async function (req, res) {
-  console.log("/uploadMediaData", req.body);
+  console.log("/uploadMediaData POST", req.body);
 
   const meta = new Image(req.body);
 
@@ -98,13 +98,13 @@ app.post("/uploadMediaData", async function (req, res) {
 
 // Tested OK
 app.get("/media", async function (req, res) {
-  console.log("/media");
+  console.log("/media GET");
   res.sendFile(__dirname + "/media/" + req.query.filename);
 });
 
 // Tested OK
 app.get("/mediaDataFilename", async function (req, res) {
-  console.log("/mediaDataFilename");
+  console.log("/mediaDataFilename GET");
   const foundImage = await Image.findOne({
     canvas: req.query.filename.split(".")[0]
   });
@@ -117,36 +117,57 @@ app.get("/mediaDataFilename", async function (req, res) {
 
 // Tested OK
 app.get("/mediaPaths", function (req, res) {
-  console.log("/mediaPaths");
+  console.log("/mediaPaths GET");
   var files = fs.readdirSync(__dirname + "/media/");
   res.send({ Files: files });
 });
 
 app.delete("/media", function (req, res) {
+  console.log("/media DELETE");
   //deleting file
   const filename = req.query.filename;
-  fs.unlink(__dirname + "/media/" + filename, async (err) => {
+
+  Image.deleteOne({ canvas: filename.split(".")[0] }, function (err, result) {
     if (err) {
       res.status(500).send({ message: err.message });
     } else {
-      await Image.deleteOne(
-        { canvas: filename.split(".")[0] },
-        function (err, result) {
-          if (err) {
-            res.status(500).send({ message: err.message });
-          } else {
-            res.status(200).send({
-              message: "Image file and mongo document deleted successfully!"
-            });
-          }
+      fs.unlink(__dirname + "/media/" + filename, (err) => {
+        if (err) {
+          res.status(500).send({ message: err.message });
+        } else {
+          res.status(200).send({
+            message: "Image file and mongo document deleted successfully!",
+            result: result
+          });
         }
-      );
+      });
     }
   });
 });
 
+app.delete("/mediaAll", function (req, res) {
+  console.log("/mediaAll DELETE");
+  var files = fs.readdirSync(__dirname + "/media/");
+
+  Image.deleteMany({}, function (err, result) {
+    if (err) {
+      res.status(500).send({ message: err.message });
+    }
+  });
+  files.forEach(function (file) {
+    fs.unlink(__dirname + "/media/" + file, (err) => {
+      if (err) {
+        res.status(500).send({ message: err.message, deleteCount: fileCount });
+      }
+    });
+  });
+  res.status(200).send({
+    message: `Successfully deleted all image files and metadata`
+  });
+});
+
 app.use("/", function (req, res) {
-  console.log("/home");
+  console.log("/ HOMEPAGE");
   res.sendFile(path.join(__dirname + "/express/index.html"));
 });
 
