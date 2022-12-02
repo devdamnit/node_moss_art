@@ -156,7 +156,6 @@ async function populateCanvas() {
 // ================================= ON LOAD ====================================
 
 $(document).ready(function () {
-  populateCanvas();
   // Get the modal
   var modal = document.getElementById("myModal");
 
@@ -182,4 +181,6 @@ $(document).ready(function () {
   document.getElementById("imgSpan").onclick = function () {
     document.getElementById("imgModal").style.display = "none";
   };
+
+  setInterval(populateCanvas(), 1000);
 });
