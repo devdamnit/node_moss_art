@@ -34,8 +34,6 @@ async function post_mediaFile(file) {
       method: "POST",
       body: fd
     });
-    data = res.json();
-    console.log(data);
   } catch (err) {
     console.error(err);
   }
@@ -131,24 +129,27 @@ async function populateCanvas() {
     let texture = $(`#${filename}`).children("imageTexture");
     texture.attr("url", APP_URL + "media?" + `filename=${path}`);
     let parent = $(`#${filename}`).parent();
+    parent.attr("hasImage", "true");
     parent.click(async function () {
-      // Get the modal
-      document.getElementById("imgModal").style.display = "block";
-      var img = document.getElementById("imgContent");
+      if (parent.attr("hasImage") == "true") {
+        // Get the modal
+        document.getElementById("imgModal").style.display = "block";
+        var img = document.getElementById("imgContent");
 
-      img.src = APP_URL + "media?" + `filename=${path}`;
-      $("#img-text-content").empty();
-      const data = await getImageMetaData(filename);
-      let title = $("<p>", { text: `Title - ${data.title}` });
-      let desc = $("<p>", { text: `Description - ${data.description}` });
-      let created = $("<p>", { text: `Created By - ${data.creator}` });
-      let cat = $("<p>", { text: `Category - ${data.category}` });
-      let dt = $("<p>", { text: `Uploaded on - ${data.upload_date}` });
-      $("#img-text-content").append(title);
-      $("#img-text-content").append(desc);
-      $("#img-text-content").append(created);
-      $("#img-text-content").append(cat);
-      $("#img-text-content").append(dt);
+        img.src = APP_URL + "media?" + `filename=${path}`;
+        $("#img-text-content").empty();
+        const data = await getImageMetaData(filename);
+        let title = $("<p>", { text: `Title - ${data.title}` });
+        let desc = $("<p>", { text: `Description - ${data.description}` });
+        let created = $("<p>", { text: `Created By - ${data.creator}` });
+        let cat = $("<p>", { text: `Category - ${data.category}` });
+        let dt = $("<p>", { text: `Uploaded on - ${data.upload_date}` });
+        $("#img-text-content").append(title);
+        $("#img-text-content").append(desc);
+        $("#img-text-content").append(created);
+        $("#img-text-content").append(cat);
+        $("#img-text-content").append(dt);
+      }
     });
   });
 }
@@ -163,6 +164,23 @@ $(document).ready(function () {
   document.getElementById("uploadbtn").onclick = function () {
     modal.style.display = "block";
   };
+
+  var canvases = document.getElementsByClassName("image_canvas");
+
+  Array.from(canvases).forEach((element) => {
+    element.onclick = function () {
+      if (element.getAttribute("hasImage") == "false") {
+        document
+          .getElementById("art-canvas")
+          .setAttribute("value", element.firstElementChild.getAttribute("id"));
+        modal.style.display = "block";
+      }
+    };
+  });
+
+  // for (var i = 0; i < canvases.length; i++) {
+
+  // }
 
   document.getElementById("modal-close-btn").onclick = function (event) {
     $("#newupload")[0].reset();
@@ -182,5 +200,6 @@ $(document).ready(function () {
     document.getElementById("imgModal").style.display = "none";
   };
 
-  setInterval(populateCanvas(), 1000);
+  // setInterval(populateCanvas(), 1000);
+  populateCanvas();
 });
