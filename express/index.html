@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Take Your Pic!</title>
+    <title>Welcome to Moss Art Gallery!</title>
 
     <script
       type="text/javascript"
@@ -71,7 +71,6 @@
       }
     </style>
   </head>
-
   <body>
     <div>
       <x3d id="canvas" width="1600px" height="900px" debug="true">
@@ -85,116 +84,1452 @@
             fieldOfView="1"
           ></Viewpoint>
 
-          <transform>
+          <Transform>
             <inline
               nameSpaceName="Russo"
               mapDEFToID="true"
               url="Lobby_Scene.x3d"
             >
             </inline>
-          </transform>
-          <transform translation="0.3 -1 38" rotation="0 0 0 0">
-            <Transform scale="0.01 0.1 1">
-              <shape id="uploadbtn" class="upload-btn-class">
+          </Transform>
+          <!-- Snap to walls below------------>
+          <Viewpoint
+            id="a-snap-view"
+            position="6.72966 -1.86183 32.54648"
+            orientation="-0.01425 0.99966 0.02162 1.97648"
+          ></Viewpoint>
+          <Transform translation="0.4561 0 28.8156" rotation="0 1 0 1.5708">
+            <Transform scale="0.01 0.5 0.5">
+              <shape id="a-snap">
                 <appearance>
-                  <ImageTexture url="upload-btn.jpg"></ImageTexture>
+                  <ImageTexture url="/static/A.jpg"></ImageTexture>
                 </appearance>
                 <box> </box>
               </shape>
             </Transform>
-          </transform>
-          <!-- Start of Wall A -->
-          <transform translation="0.3 -2 41.5" rotation="0 0 0 0">
+          </Transform>
+
+          <Viewpoint
+            id="b-snap-view"
+            position="10.80183 -1.86153 33.28030"
+            orientation="0.00503 -0.99998 0.00347 1.20897"
+          ></Viewpoint>
+          <Transform translation="1.2561 0 28.8156" rotation="0 1 0 1.5708">
+            <Transform scale="0.01 0.35 0.35">
+              <shape id="b-snap">
+                <appearance>
+                  <ImageTexture url="/static/B.jpg"></ImageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+
+          <Viewpoint
+            id="c-snap-view"
+            position="9.79227 -1.86395 31.50509"
+            orientation="0.15683 -0.98672 0.04225 0.53305"
+          ></Viewpoint>
+          <Transform translation="2.1561 0 28.8156" rotation="0 1 0 1.5708">
+            <Transform scale="0.01 0.35 0.35">
+              <shape id="c-snap">
+                <appearance>
+                  <ImageTexture url="/static/C.jpg"></ImageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+
+          <Viewpoint
+            id="d-snap-view"
+            position="7.37191 1.77323 14.06696"
+            orientation="-0.05352 -0.99842 -0.01682 0.60974"
+          ></Viewpoint>
+          <Transform translation="3.0561 0 28.8156" rotation="0 1 0 1.5708">
+            <Transform scale="0.01 0.4 0.4">
+              <shape id="d-snap">
+                <appearance>
+                  <ImageTexture url="/static/D.jpg"></ImageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+
+          <Viewpoint
+            id="e-snap-view"
+            position="8.94266 1.77442 14.02376"
+            orientation="-0.03787 0.99922 0.01159 0.59421"
+          ></Viewpoint>
+          <Transform translation="4.0561 0 28.8156" rotation="0 1 0 1.5708">
+            <Transform scale="0.01 0.35 0.35">
+              <shape id="e-snap">
+                <appearance>
+                  <ImageTexture url="/static/E.jpg"></ImageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+
+          <!-- WALL A Start------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+          <!-- First photo and metadata -->
+          <Transform translation="0.3 -1.8 41.5" rotation="0 0 0 0">
             <Transform scale="0.01 0.5 0.5">
               <shape class="image_canvas" hasImage="false">
                 <appearance id="A_1">
-                  <imageTexture url="upload-btn.jpg"> </imageTexture>
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
                 </appearance>
                 <box> </box>
               </shape>
             </Transform>
-          </transform>
-          <transform translation="0.3 -2 40" rotation="0 0 0 0">
+          </Transform>
+          <Transform translation="0.3 -2.5 41.5" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="A_title_1" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="0.3 -2.7 41.5" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="A_create_1" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- First phots metadata -->
+
+          <!-- Second photo and metadata -->
+          <Transform translation="0.3 -1.8 40" rotation="0 0 0 0">
             <Transform scale="0.01 0.5 0.5">
               <shape class="image_canvas" hasImage="false">
                 <appearance id="A_2">
-                  <imageTexture url="upload-btn.jpg"> </imageTexture
-                ></appearance>
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
                 <box> </box>
               </shape>
             </Transform>
-          </transform>
-          <transform translation="0.3 -2 38.5" rotation="0 0 0 0">
+          </Transform>
+          <Transform translation="0.3 -2.5 40" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="A_title_2" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="0.3 -2.7 40" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="A_create_2" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Second photos metadata -->
+
+          <!-- Third photo and metadata -->
+          <Transform translation="0.3 -1.8 38.5" rotation="0 0 0 0">
             <Transform scale="0.01 0.5 0.5">
               <shape class="image_canvas" hasImage="false">
                 <appearance id="A_3">
-                  <imageTexture url="upload-btn.jpg"> </imageTexture
-                ></appearance>
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
                 <box> </box>
               </shape>
             </Transform>
-          </transform>
-          <transform translation="0.3 -2 37" rotation="0 0 0 0">
+          </Transform>
+          <Transform translation="0.3 -2.5 38.5" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="A_title_3" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="0.3 -2.7 38.5" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="A_create_3" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Third photos metadata -->
+
+          <!-- Fourth photo and metadata -->
+          <Transform translation="0.3 -1.8 37" rotation="0 0 0 0">
             <Transform scale="0.01 0.5 0.5">
               <shape class="image_canvas" hasImage="false">
                 <appearance id="A_4">
-                  <imageTexture url="upload-btn.jpg"> </imageTexture
-                ></appearance>
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
                 <box> </box>
               </shape>
             </Transform>
-          </transform>
-          <transform translation="0.3 -2 35.5" rotation="0 0 0 0">
+          </Transform>
+          <Transform translation="0.3 -2.5 37" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="A_title_4" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="0.3 -2.7 37" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="A_create_4" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Fourth photos metadata -->
+
+          <!-- Fifth photo and metadata -->
+          <Transform translation="0.3 -1.8 35.5" rotation="0 0 0 0">
             <Transform scale="0.01 0.5 0.5">
               <shape class="image_canvas" hasImage="false">
                 <appearance id="A_5">
-                  <imageTexture url="upload-btn.jpg"> </imageTexture
-                ></appearance>
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
                 <box> </box>
               </shape>
             </Transform>
-          </transform>
-          <transform translation="0.3 -2 34" rotation="0 0 0 0">
+          </Transform>
+          <Transform translation="0.3 -2.5 35.5" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="A_title_5" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="0.3 -2.7 35.5" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="A_create_5" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Fifth photos metadata -->
+
+          <!-- Sixth photo and metadata -->
+          <Transform translation="0.3 -1.8 34" rotation="0 0 0 0">
             <Transform scale="0.01 0.5 0.5">
               <shape class="image_canvas" hasImage="false">
                 <appearance id="A_6">
-                  <imageTexture url="upload-btn.jpg"> </imageTexture
-                ></appearance>
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
                 <box> </box>
               </shape>
             </Transform>
-          </transform>
-          <transform translation="0.3 -2 32.5" rotation="0 0 0 0">
+          </Transform>
+          <Transform translation="0.3 -2.5 34" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="A_title_6" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="0.3 -2.7 34" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="A_create_6" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Sixth photos metadata -->
+
+          <!-- Seventh photo and metadata -->
+          <Transform translation="0.3 -1.8 32.5" rotation="0 0 0 0">
             <Transform scale="0.01 0.5 0.5">
               <shape class="image_canvas" hasImage="false">
                 <appearance id="A_7">
-                  <imageTexture url="upload-btn.jpg"> </imageTexture
-                ></appearance>
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
                 <box> </box>
               </shape>
             </Transform>
-          </transform>
-          <!-- End of Wall A -->
-          <transform translation="15 -2 28.5" rotation="0 1 0 1.5708">
+          </Transform>
+          <Transform translation="0.3 -2.5 32.5" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="A_title_7" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="0.3 -2.7 32.5" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="A_create_7" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Sevenmth photos metadata -->
+          <!-- WALL A End------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+          <!-- WALL B Start------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+          <!-- Eighth photo and metadata -->
+          <Transform translation="15 -1.8 28.5" rotation="0 1 0 1.5708">
             <Transform scale="0.01 0.5 0.5">
               <shape class="image_canvas" hasImage="false">
                 <appearance id="B_1">
-                  <imageTexture url="upload-btn.jpg"> </imageTexture
-                ></appearance>
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
                 <box> </box>
               </shape>
             </Transform>
-          </transform>
-          <transform translation="16.5 -2 28.5" rotation="0 1 0 1.5708">
+          </Transform>
+          <Transform translation="15 -2.5 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_title_1" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="15 -2.7 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_create_1" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Eighth photos metadata -->
+
+          <!-- Nineth photo and metadata -->
+          <Transform translation="16.5 -1.8 28.5" rotation="0 1 0 1.5708">
             <Transform scale="0.01 0.5 0.5">
               <shape class="image_canvas" hasImage="false">
                 <appearance id="B_2">
-                  <imageTexture url="upload-btn.jpg"> </imageTexture
-                ></appearance>
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
                 <box> </box>
               </shape>
             </Transform>
-          </transform>
+          </Transform>
+          <Transform translation="16.5 -2.5 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_title_2" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="16.5 -2.7 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_create_2" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Nineth photos metadata -->
+          <!-- Tenth photo and metadata -->
+          <Transform translation="18 -1.8 28.5" rotation="0 1 0 1.5708">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="B_3">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="18 -2.5 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_title_3" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="18 -2.7 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_create_3" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Tenth photos metadata -->
+          <!-- Eleventh photo and metadata -->
+          <Transform translation="19.5 -1.8 28.5" rotation="0 1 0 1.5708">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="B_4">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="19.5 -2.5 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_title_4" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="19.5 -2.7 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_create_4" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Eleventh photos metadata -->
+          <!-- Twelveth photo and metadata -->
+          <Transform translation="21 -1.8 28.5" rotation="0 1 0 1.5708">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="B_5">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="21 -2.5 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_title_5" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="21 -2.7 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_create_5" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Twelveth photos metadata -->
+          <!-- Thirteen photo and metadata -->
+          <Transform translation="22.5 -1.8 28.5" rotation="0 1 0 1.5708">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="B_6">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="22.5 -2.5 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_title_6" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="22.5 -2.7 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_create_6" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Thirteen photos metadata -->
+          <!-- Fourteen photo and metadata -->
+          <Transform translation="24 -1.8 28.5" rotation="0 1 0 1.5708">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="B_7">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="24 -2.5 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_title_7" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="24 -2.7 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_create_7" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Fourteen photos metadata -->
+          <!-- Fifteen photo and metadata -->
+          <Transform translation="25.5 -1.8 28.5" rotation="0 1 0 1.5708">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="B_8">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="25.5 -2.5 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_title_8" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="25.5 -2.7 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_create_8" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Fifteen photos metadata -->
+          <!-- Sixteen photo and metadata -->
+          <Transform translation="27 -1.8 28.5" rotation="0 1 0 1.5708">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="B_9">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="27 -2.5 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_title_9" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="27 -2.7 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_create_9" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Sixteen photos metadata -->
+          <!-- Seventeen photo and metadata -->
+          <Transform translation="28.5 -1.8 28.5" rotation="0 1 0 1.5708">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="B_10">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="28.5 -2.5 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_title_10" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="28.5 -2.7 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_create_10" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Seventeen photos metadata -->
+          <!-- Eighteen photo and metadata -->
+          <Transform translation="30 -1.8 28.5" rotation="0 1 0 1.5708">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="B_11">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="30 -2.5 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_title_11" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="30 -2.7 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_create_11" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Eighteen photos metadata -->
+          <!-- Nineteen photo and metadata -->
+          <Transform translation="31.5 -1.8 28.5" rotation="0 1 0 1.5708">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="B_12">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="31.5 -2.5 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_title_12" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="31.5 -2.7 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_create_12" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Nineteen photos metadata -->
+          <!-- Twenty photo and metadata -->
+          <Transform translation="33 -1.8 28.5" rotation="0 1 0 1.5708">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="B_13">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="33 -2.5 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_title_13" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="33 -2.7 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_create_13" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Twenty photos metadata -->
+          <!-- Twentyone photo and metadata -->
+          <Transform translation="34.5 -1.8 28.5" rotation="0 1 0 1.5708">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="B_14">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="34.5 -2.5 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_title_14" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="34.5 -2.7 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_create_14" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Twentyone photos metadata -->
+          <!-- Twentytwo photo and metadata -->
+          <Transform translation="36 -1.8 28.5" rotation="0 1 0 1.5708">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="B_15">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="36 -2.5 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_title_15" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="36 -2.7 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_create_15" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Twentytwo photos metadata -->
+          <!-- Twentythree photo and metadata -->
+          <Transform translation="37.5 -1.8 28.5" rotation="0 1 0 1.5708">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="B_16">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="37.5 -2.5 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_title_16" string="">
+                <FontStyle
+                  family='"SANS"'
+                  justify='"MIDDLE"'
+                  size="0.15"
+                  color
+                />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="37.5 -2.7 28.5" rotation="0 0 0 0">
+            <Shape>
+              <appearance><Material diffuseColor="0 0 0" /></appearance>
+              <Text id="B_create_16" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Twentythree photos metadata -->
+          <!-- WALL B End------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+          <!-- WALL C Start------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+          <!-- Twentyfour photo and metadata -->
+          <Transform translation="14.1 -1 27.8" rotation="0 1 0 0.2">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="C_1">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="14 -1.7 27.8" rotation="0 1 0 -1.3708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="C_title_1" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="14 -1.9 27.8" rotation="0 1 0 -1.3708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="C_create_1" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Twentyfour phots metadata -->
+          <!-- Twentyfive photo and metadata -->
+          <Transform translation="13.8 -0.3 26.4" rotation="0 1 0 0.2">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="C_2">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="13.75 -1 26.4" rotation="0 1 0 -1.3708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="C_title_2" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="13.75 -1.2 26.4" rotation="0 1 0 -1.3708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="C_create_2" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Twentyfive phots metadata -->
+          <!-- Twentysix photo and metadata -->
+          <Transform translation="13.5 0.4 25" rotation="0 1 0 0.2">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="C_3">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="13.45 -0.3 25" rotation="0 1 0 -1.3708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="C_title_3" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="13.45 -0.5 25" rotation="0 1 0 -1.3708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="C_create_3" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Twentysix phots metadata -->
+          <!-- Twentyseven photo and metadata -->
+          <Transform translation="13.15 0.9 23.5" rotation="0 1 0 0.2">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="C_4">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="13.1 0.2 23.5" rotation="0 1 0 -1.3708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="C_title_4" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="13.1 0 23.5" rotation="0 1 0 -1.3708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="C_create_4" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Twentyseven phots metadata -->
+
+          <!-- Twentyeight photo and metadata -->
+          <Transform translation="12.85 0.9 22" rotation="0 1 0 0.2">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="C_5">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="12.8 0.2 22" rotation="0 1 0 -1.3708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="C_title_5" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="12.8 0 22" rotation="0 1 0 -1.3708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="C_create_5" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Twentyeight phots metadata -->
+
+          <!-- Twentynine photo and metadata -->
+          <Transform translation="12.5 1.6 20.5" rotation="0 1 0 0.2">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="C_6">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="12.45 0.9 20.5" rotation="0 1 0 -1.3708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="C_title_6" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="12.45 0.7 20.5" rotation="0 1 0 -1.3708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="C_create_6" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Twentynine phots metadata -->
+
+          <!-- WALL C End------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+          <!-- WALL D Start------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+          <!-- Thirty photo and metadata -->
+          <Transform translation="10.4158 1.4371 12" rotation="0 1 0 0.2">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="D_1">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="10.4158 0.7 12" rotation="0 1 0 -1.3708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="D_title_1" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="10.4158 0.5 12" rotation="0 1 0 -1.3708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="D_create_1" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Thirty phots metadata -->
+
+          <!-- Thirtyone photo and metadata -->
+          <Transform translation="10.0442 1.4363 10.1435" rotation="0 1 0 0.2">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="D_2">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="10.0442 0.7 10.1435" rotation="0 1 0 -1.3708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="D_title_2" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="10.0442 0.5 10.1435" rotation="0 1 0 -1.3708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="D_create_2" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Thirtyone phots metadata -->
+
+          <!-- Thirtytwo photo and metadata -->
+          <Transform translation="9.4532 1.5 6.4878" rotation="0 0 0 0">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="D_3">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="9.4 0.8 6.4878" rotation="0 1 0 -1.5">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="D_title_3" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="9.4 0.6 6.4878" rotation="0 1 0 -1.5">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="D_create_3" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Thirtytwo phots metadata -->
+
+          <!-- Thirtythree photo and metadata -->
+          <Transform translation="9.4532 1.5 5" rotation="0 0 0 0">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="D_4">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="9.4 0.8 5" rotation="0 1 0 -1.5">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="D_title_4" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="9.4 0.6 5" rotation="0 1 0 -1.5">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="D_create_4" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Thirtythree phots metadata -->
+
+          <!-- Thirtyfour photo and metadata -->
+          <Transform translation="9.4532 1.5 3.5" rotation="0 0 0 0">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="D_5">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="9.4 0.8 3.5" rotation="0 1 0 -1.5">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="D_title_5" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="9.4 0.6 3.5" rotation="0 1 0 -1.5">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="D_create_5" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Thirtyfour phots metadata -->
+          <!-- Thirtyfive photo and metadata -->
+          <Transform translation="9.4532 1.5 2" rotation="0 0 0 0">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="D_6">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="9.4 0.8 2" rotation="0 1 0 -1.5">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="D_title_6" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="9.4 0.6 2" rotation="0 1 0 -1.5">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="D_create_6" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Thirtyfive phots metadata -->
+
+          <!-- Thirtysix photo and metadata -->
+          <Transform translation="9.4532 1.5 0.5" rotation="0 0 0 0">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="D_7">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="9.4 0.8 0.5" rotation="0 1 0 -1.5">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="D_title_7" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="9.4 0.6 0.5" rotation="0 1 0 -1.5">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="D_create_7" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Thirtysix phots metadata -->
+
+          <!-- WALL D End------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+          <!-- WALL E Start------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
+
+          <!-- Thirtyseven photo and metadata -->
+          <Transform translation="6.5 1.4698 12.0687" rotation="0 0 0 0">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="E_1">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="6.5 0.7 12.0687" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="E_title_1" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="6.5 0.5 12.0687" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="E_create_1" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Thirtyseven phots metadata -->
+
+          <!-- Thirtyeight photo and metadata -->
+          <Transform translation="6.4 1.4698 9.0687" rotation="0 0 0 0">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="E_2">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="6.4 0.7 9.0687" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="E_title_2" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="6.4 0.5 9.0687" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="E_create_2" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Thirtyeight phots metadata -->
+
+          <!-- Thirtynine photo and metadata -->
+          <Transform translation="6.4 1.4698 7.5" rotation="0 0 0 0">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="E_3">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="6.4 0.7 7.5" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="E_title_3" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="6.4 0.5 7.5" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="E_create_3" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Thirtynine phots metadata -->
+
+          <!-- Fourty photo and metadata -->
+          <Transform translation="6.4 1.4698 6" rotation="0 0 0 0">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="E_4">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="6.4 0.7 6" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="E_title_4" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="6.4 0.5 6" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="E_create_4" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Fourty phots metadata -->
+
+          <!-- Fourtyone photo and metadata -->
+          <Transform translation="6.4 1.4698 4.5" rotation="0 0 0 0">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="E_5">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="6.4 0.7 4.5" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="E_title_5" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="6.4 0.5 4.5" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="E_create_5" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Fourtyone phots metadata -->
+
+          <!-- Fourtytwo photo and metadata -->
+          <Transform translation="6.4 1.4698 3" rotation="0 0 0 0">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="E_6">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="6.4 0.7 3" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="E_title_6" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="6.4 0.5 3" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="E_create_6" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Fourtytwo phots metadata -->
+
+          <!-- Fourtythree photo and metadata -->
+          <Transform translation="6.4 1.4698 1.5" rotation="0 0 0 0">
+            <Transform scale="0.01 0.5 0.5">
+              <shape class="image_canvas" hasImage="false">
+                <appearance id="E_7">
+                  <imageTexture url="/static/upload.jpg"> </imageTexture>
+                </appearance>
+                <box> </box>
+              </shape>
+            </Transform>
+          </Transform>
+          <Transform translation="6.4 0.7 1.5" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="E_title_7" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <Transform translation="6.4 0.5 1.5" rotation="0 1 0 1.5708">
+            <Shape>
+              <appearance><Material diffuseColor="0.8 0.8 0.8" /></appearance>
+              <Text id="E_create_7" string="">
+                <FontStyle family='"SANS"' justify='"MIDDLE"' size="0.15" />
+              </Text>
+            </Shape>
+          </Transform>
+          <!-- Fourtythree phots metadata -->
+          <!-- WALL E End------------------------------------------------------------------------------------------------------------------------------------------------------------------------>
         </scene>
       </x3d>
     </div>

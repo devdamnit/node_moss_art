@@ -124,21 +124,31 @@ async function getImageMetaData(filename) {
 async function populateCanvas() {
   await update_media_paths();
 
-  media_paths.forEach(function (path) {
+  media_paths.forEach(async function (path) {
     let filename = path.split(".")[0];
+
+    let fileAttr = filename.split("_");
+
     let texture = $(`#${filename}`).children("imageTexture");
     texture.attr("url", APP_URL + "media?" + `filename=${path}`);
+
     let parent = $(`#${filename}`).parent();
     parent.attr("hasImage", "true");
-    parent.click(async function () {
+
+    const data = await getImageMetaData(filename);
+
+    document.getElementById(fileAttr[0] + "_title_" + fileAttr[1]).string =
+      data.title;
+    document.getElementById(fileAttr[0] + "_create_" + fileAttr[1]).string =
+      "By - " + data.creator;
+
+    parent.click(function () {
       if (parent.attr("hasImage") == "true") {
         // Get the modal
         document.getElementById("imgModal").style.display = "block";
         var img = document.getElementById("imgContent");
-
         img.src = APP_URL + "media?" + `filename=${path}`;
         $("#img-text-content").empty();
-        const data = await getImageMetaData(filename);
         let title = $("<p>", { text: `Title - ${data.title}` });
         let desc = $("<p>", { text: `Description - ${data.description}` });
         let created = $("<p>", { text: `Created By - ${data.creator}` });
@@ -157,13 +167,29 @@ async function populateCanvas() {
 // ================================= ON LOAD ====================================
 
 $(document).ready(function () {
-  // Get the modal
-  var modal = document.getElementById("myModal");
+  //onclick for snap to view
 
-  // Get the button that opens the modal
-  document.getElementById("uploadbtn").onclick = function () {
-    modal.style.display = "block";
+  document.getElementById("a-snap").onclick = function () {
+    document.getElementById("a-snap-view").setAttribute("set_bind", "true");
   };
+
+  document.getElementById("b-snap").onclick = function () {
+    document.getElementById("b-snap-view").setAttribute("set_bind", "true");
+  };
+
+  document.getElementById("c-snap").onclick = function () {
+    document.getElementById("c-snap-view").setAttribute("set_bind", "true");
+  };
+
+  document.getElementById("d-snap").onclick = function () {
+    document.getElementById("d-snap-view").setAttribute("set_bind", "true");
+  };
+  document.getElementById("e-snap").onclick = function () {
+    document.getElementById("e-snap-view").setAttribute("set_bind", "true");
+  };
+
+  // MODAL UPLOAD
+  var modal = document.getElementById("myModal");
 
   var canvases = document.getElementsByClassName("image_canvas");
 
@@ -178,10 +204,6 @@ $(document).ready(function () {
     };
   });
 
-  // for (var i = 0; i < canvases.length; i++) {
-
-  // }
-
   document.getElementById("modal-close-btn").onclick = function (event) {
     $("#newupload")[0].reset();
     modal.style.display = "none";
@@ -195,7 +217,6 @@ $(document).ready(function () {
     event.preventDefault();
   };
 
-  // Get the <span> element that closes the modal
   document.getElementById("imgSpan").onclick = function () {
     document.getElementById("imgModal").style.display = "none";
   };
