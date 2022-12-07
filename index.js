@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const fs = require("fs");
 var bodyParser = require("body-parser");
-const { count } = require("console");
+const cors = require("cors");
 
 /**
  * Connection URI. Update <username>, <password>, and <your-cluster-url> to reflect your cluster.
@@ -47,6 +47,7 @@ app.use(
     createParentPath: true
   })
 );
+app.use(cors());
 
 // Tested OK
 app.post("/uploadMediaFile", function (req, res) {

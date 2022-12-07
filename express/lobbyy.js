@@ -1,3 +1,5 @@
+// javascript pureJs
+
 let media_paths = [];
 const APP_URL = "http://localhost:3000/";
 
